@@ -28,6 +28,7 @@ function getPost(id) {
                 fetch(`https://dummyjson.com/users/${post.userId}`)
                     .then(res => res.json())
                     .then(user => resolve({ ...post, user }))
+                    .catch(reject)
             })
             .catch(reject)
     });
